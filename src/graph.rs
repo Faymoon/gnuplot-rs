@@ -128,7 +128,7 @@ impl Graph
 
 	pub fn set_title(&mut self, title: &str)
 	{
-		self.title = String::from(title).replace("\"", "\\\"").replace("'", "\\'");
+		self.title = String::from(title).escape_default().to_string();
 	}
 
 	pub fn set_range(&mut self, start: Bound<f64>, end: Bound<f64>)
